@@ -5,5 +5,4 @@ var UserSchema = new mongoose.Schema({
     Name:String
 });
  
-module.exports = mongoose.model(
-    'user', UserSchema, 'Users');
+module.exports = mongoose.model('user', UserSchema, 'Users');
