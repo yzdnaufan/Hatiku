@@ -2,6 +2,8 @@
 
 Sebuah web application untuk mendiagnosis penyakit cardiovascular pada user. Diharapkan dengan adanya diagnosis dini, user dapat memberikan penanganan lebih cepat jika memang terindikasi penyakit cardivascular. Dengan begitu kemungkinan untuk sembuh akan lebih besar. 
 
+*Source code API AI ada di branch Hatiku-ML
+
 ## Anggota Kelompok :
 
 1. Freddy Tanusina - 20/456841/TK/50665 
