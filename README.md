@@ -12,6 +12,7 @@ Sebuah web application untuk mendiagnosis penyakit cardiovascular pada user. Dih
 4. Putri Ayu Shintaningrum - 20/460559/TK/51148
 5. Ryan Kusnadi - 20/463613/TK/51605
 
+# Cara run server-diagnosis
 
 # Getting Started with Create React App
 
