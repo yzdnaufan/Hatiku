@@ -107,70 +107,59 @@ class CVDExpertSystem(KnowledgeEngine):
     #possible 
     @Rule(Fact(smoking = True)| Fact(hypertension = True) | Fact(high_cholesterol = True) | Fact(active = False) | Fact(diabetes = True) | Fact(overweight = True) | Fact(family_history_coronaryheartdisease = True), salience = 11)
     def possible_coronary_heart_disease(self):
-        print(1)
         self.symptoms_probability_dictionary["coronary_heart_disease"] = 0.1
         
     #probable
     @Rule(AND(Fact(chest_pains = True), Fact(breathlessness=True), Fact(nausea = True), Fact(faintings = True)), salience = 10)
     def probable_coronary_heart_disease(self):
-        print(2)
         self.facts 
         self.symptoms_probability_dictionary["coronary_heart_disease"] = 0.5
         
     #confirmed 
     @Rule(Fact(breathlessness=True), Fact(fatigue = True), Fact(swollen_ankles = True), Fact(coughing = True), Fact(palpitations = True), salience = 9)
     def confirmed_coronary_heart_disease(self):
-        print(3)
         self.symptoms_probability_dictionary["coronary_heart_disease"] = 0.9
 
     #stroke
     #possible
     @Rule(Fact(overweight = True) | Fact(smoking = True) | Fact(high_cholesterol = True) | Fact(hypertension = True) | Fact(diabetes = True) | Fact(atrial_fibrillation = True), salience = 8)
     def possible_stroke(self):
-        print(4)
         self.symptoms_probability_dictionary["stroke"] = 0.1
     
     #probable 
     @Rule(Fact(sudden_headache = True), Fact(dizziness_confusion = True), Fact(sudden_lossofvision = True), Fact(numbness = True), salience = 7)
     def probable_stroke(self):
-        print(5)
         self.symptoms_probability_dictionary["stroke"] = 0.5
 
     #confirmed 
     @Rule(Fact(face_dropping = True), Fact(numbness = True), Fact(speech_problem = True), salience = 6)
     def confirmed_stroke(self):
-        print(6)
         self.symptoms_probability_dictionary["stroke"] = 0.9
         
     #peripheral arterial disease
     #possible 
     @Rule(Fact(smoking = True) | Fact(diabetes = True) | Fact(above_50 = True) | Fact(racially_african = True) | Fact(personal_family_history_blood_bloodvesseldisease = True) | Fact(blood_clotting_disorder = True) | Fact(kidney_disease = True), salience = 5)
     def possible_peripheral_arterial_disease(self):
-        print(7)
         self.symptoms_probability_dictionary["peripheral_arterial_disease"] = 0.1
 
     #probable 
     @Rule(Fact(leg_pain_cramping = True), Fact(burning_aching_toes = True), Fact(cool_feet_skin = True), Fact(redness_colorchanges_skin = True), salience = 4)
     def probable_peripheral_arterial_disease(self):
-        print(8)
         self.symptoms_probability_dictionary["peripheral_arterial_disease"] = 0.5
         
     #Thoracic aortic aneurysms
     #possible 
     @Rule(Fact(back_pain = True) | Fact(coughing = True) | Fact(hoarseness = True) | Fact(difficulty_breathing = True) | Fact(tenderness_pain_chest = True), salience = 3)
     def possible_thoracic_aortic_aneurysms(self):
-        print(9)
         self.symptoms_probability_dictionary["thoracic_aortic_aneurysms"] = 0.1
 
     #confirmed 
     @Rule(Fact(sharp_sudden_pain_upperback = True), Fact(pain_chest_jaw_neck_arms = True), Fact(difficulty_breathing = True), Fact(hypertension = True), Fact(loss_of_consciousness = True), Fact(breathlessness=True), Fact(trouble_swallowing_food = True), salience = 2)
     def probable_thoracic_aortic_aneurysms(self):
-        print(10)
         self.symptoms_probability_dictionary["thoracic_aortic_aneurysms"] = 0.9
 
     #abdominal aortic aneurysm
     #confirmed
     @Rule(Fact(deep_constant_belly_pain = True)& Fact(back_pain = True), salience = 1)
     def confirmed_abdominal_aortic_aneurysm(self):
-        print(11)
         self.symptoms_probability_dictionary["abdominal_aortic_aneurysm"] = 0.9
