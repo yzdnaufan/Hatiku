@@ -15,12 +15,12 @@ const patient = mongoose.Schema({
     },
     weight:{
         type: Number,
-        //1: Woman, 2:Man
-        enum: [1,2],
         required: true
     },
     gender:{
         type: Number,
+        //1: Woman, 2:Man
+        enum: [1,2],
         required: true
     },
     ap_hi:{

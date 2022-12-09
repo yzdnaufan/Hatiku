@@ -1,7 +1,7 @@
 import React from 'react';
 import { GridComponent, Inject, ColumnsDirective, ColumnDirective, Search, Page, Edit, CommandColumn } from '@syncfusion/ej2-react-grids';
 
-import {Data } from '../../data/data';
+import {Data } from '../../data';
 import { Header } from '../../components';
 
 const DataForm = () => {

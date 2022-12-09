@@ -4,8 +4,10 @@ import "./assets/styles/app.css"
 import { BrowserRouter, Route, Routes, Navigate } from "react-router-dom";
 import {LandingPage, Error404, LoginPage} from "./views";
 import Admin from "./layouts/Admin";
+import { handleFormSubmit } from './utils/useForm';
 
 const app = () => {
+  
   return (
     <>
         <BrowserRouter>
