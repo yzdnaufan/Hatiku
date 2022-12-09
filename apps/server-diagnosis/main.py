@@ -50,7 +50,11 @@ def hello():
 
 
 @app.post("/diagnose/")
-async def root(form_dictionary:dict):
+async def diagnose(form_dictionary:dict):
+    for i in form_dictionary.keys():
+        if i != "racial_identity":
+            if type(form_dictionary[i]) != int:
+                form_dictionary[i] = int(form_dictionary[i])
     prediction = predict_risk(form_dictionary)
     diagnosis = diagnose_disease(form_dictionary)
     return {"risk": prediction, "diagnosis": diagnosis}
