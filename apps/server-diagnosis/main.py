@@ -15,6 +15,7 @@ from fastapi.middleware.cors import CORSMiddleware
 import pickle
 from typing import Union
 import numpy as np
+import pandas as pd
 from . import train 
 
 from sklearn.model_selection import train_test_split
