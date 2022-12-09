@@ -1,21 +1,27 @@
 import React from "react";
-import { Routes, Route, Navigate} from "react-router-dom";
+import { Routes, Route, Navigate, Outlet} from "react-router-dom";
 
-import AdminNavbar from "../components/AdminNavbar";
-import Sidebar from "../components/Sidebar";
 import {TooltipComponent} from "@syncfusion/ej2-react-popups"
 import {FiUsers} from "react-icons/fi"
 
-// components
-// import Sidebar from "components/Sidebar/Sidebar.js";
-// import HeaderStats from "components/Headers/HeaderStats.js";
-// import FooterAdmin from "components/Footers/FooterAdmin.js";
+import { useStateContext } from "../contexts/ContextProvider";
 
+// components
+import {AdminNavbar, Sidebar} from "../components";
 // views
-import {UserManagement, DatasetManagement, Dashboard} from "../views/admin"
+import {UserManagement, Dataset, Dashboard, DataForm} from "../views/admin"
 
 export default function Admin() {
-  const dummyState = true;
+  const { setCurrentColor, setCurrentMode, currentMode, activeMenu, currentColor, themeSettings, setThemeSettings } = useStateContext();
+
+
+  const stateStyle = activeMenu ?( {
+    sidebar : "w-72 h-screen bg-white fixed pl-4",
+    navbar : "md:ml-72"
+  } ): ({
+    sidebar : "w-0",
+    navbar : "flex-2"
+  })
 
   return (
     <>
@@ -31,13 +37,13 @@ export default function Admin() {
 
 
       </div>
-      <div className={`${dummyState? "w-72 h-screen bg-white fixed" : "w-0"} 
-      sidebar pl-4 pt-4 dark:bg-secondary-dark-bg  `}>
+      <div className={`${stateStyle.sidebar}
+      sidebar pt-3 dark:bg-secondary-dark-bg transition-all ease-linear duration-300 delay-75`}>
         <Sidebar/>
       </div>
 
       <div className={
-        ` dark:bg-main-bg bg-main-bg w-full min-h-screen ${dummyState? "md:ml-72" : "flex-2"}`
+        ` dark:bg-main-bg bg-main-bg w-full min-h-screen ${stateStyle.navbar }`
       }>
         <div className="fixed md:static navbar w-full"> 
           <AdminNavbar />
@@ -46,11 +52,11 @@ export default function Admin() {
       
         {/* Header */}
         {/* <HeaderStats /> */}
-        <div className="px-4 bg-red-500 md:px-10 mx-auto w-full m-2">
+        <div className="px-4 md:px-10 mx-auto w-full m-2">
           <Routes>
             <Route path="dashboard"  element={<Dashboard/>} />
-            <Route path="users"  element={<UserManagement/>} />
-            <Route path="datasets"  element={<DatasetManagement/>} />
+            <Route path="users"  element={<DataForm/>} />
+            <Route path="datasets"  element={<Dataset/>} />
             <Route path="*" element={<Navigate to={'/404'}/>} />
             <Route path="" element={<Navigate to={'/admin/dashboard'}/>} />
           </Routes>
@@ -58,6 +64,7 @@ export default function Admin() {
         </div>
       </div>
     </div>
+    <Outlet/>
     </>
   );
 }

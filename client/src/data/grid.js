@@ -1,0 +1,32 @@
+
+export const Grid = [
+    { field: '_id',
+      isPrimaryKey: 'true',
+      headerText: 'ID',
+      width: '100',
+      textAlign: 'Center',
+    },
+    { field: 'name',
+      headerText: 'Nama',
+      width: '170',
+      textAlign: 'Center',
+    },
+    {field: 'height',
+    headerText: 'Tinggi (cm)',
+    width: '50',
+    textAlign: 'Center',},
+  
+    { field: 'weight',
+      headerText: 'Berat Badan (kg)',
+      width: '50',
+      textAlign: 'Center' },
+  
+    { field: 'ReportsTo',
+      headerText: 'Reports To',
+      width: '120',
+      textAlign: 'Center' },
+    { field: 'EmployeeID',
+      headerText: 'Employee ID',
+      width: '125',
+      textAlign: 'Center' },
+  ];
