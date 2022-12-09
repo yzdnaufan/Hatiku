@@ -1,6 +1,0 @@
-fastapi
-experta
-pandas
-numpy
-pickle
-sklearn
