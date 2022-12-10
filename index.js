@@ -22,3 +22,5 @@ app.use(userRoutes);
 
 
 app.listen(port, () => console.log('Server is up and running in port: '+port));
+
+export default app;
